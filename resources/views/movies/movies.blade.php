@@ -7,6 +7,7 @@
     {{-- google fonts --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Movies</title>
 </head>
 <body>
