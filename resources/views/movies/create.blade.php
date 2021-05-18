@@ -26,6 +26,6 @@
             <label for="descrizione">Descrizione</label>
             <textarea type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Inserisci una descrizione" rows="6"></textarea>
         </div>
+        <button type="submit" class="btn btn-success">Salva</button>
     </form>
-    <button type="submit" class="btn btn-success">Salva</button>
 @endsection
