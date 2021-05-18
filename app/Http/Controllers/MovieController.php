@@ -36,6 +36,12 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'titolo' => 'required|string|max:100',
+            'autore' => 'required|string',
+            'genere' => 'required'
+        ]);
+
         $data = $request->all();
 
         $newMovie = new Movie();

@@ -16,6 +16,7 @@
             <th scope="col">Autore</th>
             <th scope="col">Genere</th>
             <th scope="col">Descrizione</th>
+            <th scope="col">Elimina film</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@
             <td>{{$movie->autore}}</td>
             <td>{{$movie->genere}}</td>
             <td><a href="{{route('movies.show', ['movie' => $movie->id] )}}"><button type="button" class="btn btn-secondary">Descrizione</button></a></td>
+            <td><a href="{{route('movies.show', ['movie' => $movie->id] )}}"><button type="button" class="btn btn-danger">Elimina</button></a></td>
           </tr>
     @endforeach
         </tbody>
