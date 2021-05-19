@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MovieController@index');
+// Route::get('/', 'MovieController@index');
 
-Route::get('/movie/{id}', 'MovieController@show');
+// Route::get('/movie/{id}', 'MovieController@show');
 
 // Per utilizzare tutte le resources del controller!
 Route::resource('movies', 'MovieController');

@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('PageTitle')
-    Aggiungi un nuovo film!   
+    Modifica | Aggiorna film!   
 @endsection
 
 @section('content')
-    <h1>Aggiungi un film!</h1>
+    <h1>Modifica un film!</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -17,8 +17,8 @@
         </div>
     @endif
 
-    <form action="{{route('movies.store')}}" method="POST">
-        @method('POST')
+    <form action="{{route('movies.update', ['movie' => $movie->id])}}" method="POST">
+        @method('PUT')
         @csrf
 
         <div class="form-group">
@@ -43,4 +43,5 @@
         </div>
         <button type="submit" class="btn btn-success">Salva</button>
     </form>
+    
 @endsection

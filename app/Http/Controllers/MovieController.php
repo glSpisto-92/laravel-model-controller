@@ -48,6 +48,7 @@ class MovieController extends Controller
         $newMovie->titolo = $data['titolo'];
         $newMovie->autore = $data['autore'];
         $newMovie->genere = $data['genere'];
+        $newMovie->anno = $data['anno'];
         $newMovie->descrizione = $data['descrizione'];
 
         $newMovie->save();
@@ -72,9 +73,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Movie $movie)
     {
-        //
+        return view('movies.edit', ['movie' => $movie]);
     }
 
     /**
@@ -84,9 +85,19 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Movie $movie)
     {
-        //
+        // validation
+        $request->validate([
+            'titolo' => 'required|string|max:100',
+            'autore' => 'required|string',
+            'genere' => 'required'
+        ]);
+
+        $movie->update($request->all());
+
+        // return
+        return redirect()->route('movies.index', ['movie' => $movie])->with('notice', 'Il film è stato modificato!');
     }
 
     /**
@@ -95,8 +106,10 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+
+        return redirect()->route('movies.index')->with('message', 'Il film è stato eliminato!');
     }
 }
