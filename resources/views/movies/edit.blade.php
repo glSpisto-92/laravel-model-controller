@@ -23,23 +23,23 @@
 
         <div class="form-group">
             <label for="titolo">Titolo</label>
-            <input type="text" class="form-control" name="titolo" id="titolo" placeholder="Inserisci un titolo">
+            <input type="text" class="form-control" name="titolo" id="titolo" placeholder="Inserisci un titolo" value="{{$movie->titolo}}">
         </div>
         <div class="form-group">
             <label for="autore">Autore</label>
-            <input type="text" class="form-control" name="autore" id="autore" placeholder="Inserisci un autore">
+            <input type="text" class="form-control" name="autore" id="autore" placeholder="Inserisci un autore" value="{{$movie->autore}}">
         </div>
         <div class="form-group">
             <label for="genere">Genere</label>
-            <input type="text" class="form-control" name="genere" id="genere" placeholder="Inserisci il genere">
+            <input type="text" class="form-control" name="genere" id="genere" placeholder="Inserisci il genere" value="{{$movie->genere}}">
         </div>
-        <div class="form-group">
+        <div class="form-group d-inline-block">
             <label for="genere">Anno</label>
-            <input type="text" class="form-control" name="anno" id="anno" placeholder="Inserisci l'anno">
+            <input type="text" class="form-control" name="anno" id="anno" placeholder="Inserisci l'anno" value="{{$movie->anno}}">
         </div>
         <div class="form-group">
             <label for="descrizione">Descrizione</label>
-            <textarea type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Inserisci una descrizione" rows="6"></textarea>
+            <textarea type="text" class="form-control" name="descrizione" id="descrizione" placeholder="Inserisci una descrizione" rows="6">{{$movie->descrizione}}"</textarea>
         </div>
         <button type="submit" class="btn btn-success">Salva</button>
     </form>

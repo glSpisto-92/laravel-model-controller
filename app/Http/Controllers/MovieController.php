@@ -91,7 +91,8 @@ class MovieController extends Controller
         $request->validate([
             'titolo' => 'required|string|max:100',
             'autore' => 'required|string',
-            'genere' => 'required'
+            'genere' => 'required',
+            'anno' => 'required|numeric'
         ]);
 
         $movie->update($request->all());
